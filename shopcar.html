@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href=".\css\shopcar.css"></link>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>购物车</title>
+  </head>
+  <body>
+    <!-- 单独删除模态框 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="top: 25%;">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body" style="text-align: center;height: 200px;line-height: 120px;">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+              <h4 class="modal-title" id="myModalLabel" style="color: #000;text-align: center;margin-top: 40px;">你确定要删除此商品吗</h4>
+              <button class="btn btn-success" data-dismiss="modal" style="width:150px;margin-right: 35px; ">取消</button>
+              <button class="btn btn-default killgoods" data-dismiss="modal" style="width: 150px;">确定</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 全部删除模态框 -->
+    <div class="modal fade" id="myModal-all" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="top: 25%;">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body" style="text-align: center;height: 200px;line-height: 120px;">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+              <h4 class="modal-title" id="myModalLabel" style="color: #000;text-align: center;margin-top: 40px;">你确定要删除此商品吗</h4>
+              <button class="btn btn-success" data-dismiss="modal" style="width:150px;margin-right: 35px; ">取消</button>
+              <button class="btn btn-default killallgoods" data-dismiss="modal" style="width: 150px;">确定</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="toTop" class="toTop" title="回到顶部"></div>
+    <div id="loading">
+      <div id="loading-animation">
+        <img src="./png/timg.gif">
+      </div>
+    </div>
+    <div id="header">
+      <div class="header-font">
+        <div class="welcome">
+          <ul class="hanggaocuowu">
+            <li>你好，欢迎光临接斧子</li>
+            <li><a id="zhanghao" href="login.html">请登录</a></li>
+            <li><a id="yidenglu" href="register.html">免费注册</a></li>
+          </ul>
+        </div>
+        <div class="myself">
+          <ul class="hanggaocuowu">
+            <li><a href="#">个人中心</a></li>
+            <li><a href="./myorder.html">我的订单</a></li>
+            <li><a href="./like.html">收藏夹</a></li>
+            <li><a href="#">充值</a></li>
+            <li><a href="#">手机版</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="serach">
+      <div class="serach-log">
+        <img src=".\png\header-logo.png" alt="进乐宝"></img>
+      </div>
+      <div class="serach-input">
+        <input type="text" placeholder="请输入商品名称">
+        <button>搜索</button>
+      </div>
+      <a href="./shopcar.html">
+        <div class="serach-car">
+          <div class="serach-car-log">
+            <img src=".\png\shopping-trolley.png" alt="我的购物车"></img>
+            <div class="mycar">我的购物车</div>
+          <div class="nub">0</div>
+          </div>
+        </div>
+      </a>
+      <div class="serach-bottom">
+        <span>西瓜</span>
+        <span>葡萄</span>
+        <span>苹果</span>
+        <span>西红柿</span>
+      </div>
+    </div>
+    <div id="daohang">
+      <ul>
+        <li id="all"><a href="./index.html">全部商品</a></li>
+        <a href="./index.html"><li>首页</li></a>
+        <a href="./today.html"><li>今日特价</li></a>
+        <a href="#"><li>精品推荐</li></a>
+        <a href="#"><li>新品上市</li></a>
+        <a href="#"><li>销售排行</li></a>
+      </ul>
+    </div>
+    <div id="breadcrumbs">购物车</div>
+    <!-- 三圆嘿嘿嘿 -->
+    <div class="trolley-show-status">
+        <div class="trolley-status">
+            <div class="trolley-round rount-on">1</div>
+            <span class="text-on">我的购物车</span>
+        </div>
+        <div class="trolley-status">
+            <div class="trolley-round">2</div>
+            <span>填写核对订单信息</span>
+        </div>
+        <div class="trolley-status" style="margin-right: inherit;">
+            <div class="trolley-round">3</div>
+            <span>成功提交订单</span>
+        </div>
+        <div class="line"><span style="width: 50%;"></span></div>
+    </div>
+    <!-- 全部商品 -->
+    <div class="user-title">
+      <span>全部商品：<span class="howmanygoods" style="color: #38bb5e!important">0</span></span>
+    </div>
+    <!-- 操作 -->
+    <table class="table" id="list">
+        <tr class="title">
+          <th style="width: 30px;"><input type="checkbox" checked="checked" id="allcheck" class="goods_checkbox"></th>
+          <th style="width: 170px;">全选</th>
+          <th style="width: 500px;" class="left">商品信息</th>
+          <th style="width: 100px;">单价（元）</th>
+          <th style="width: 170px;">数量</th>
+          <th style="width: 120px;">金额（元）</th>
+          <th>操作</th>
+        </tr>
+    </table>
+    <!-- 动态生成商品 -->
+    <div id="shopcar-ulli">
+      <!-- <div class="shopcar-goods">
+        <table class="table">
+          <tr class="title">
+            <th style="width: 30px;"><input type="checkbox" checked="checked" class="goods_checkbox killcheckbox"></th>
+            <th style="width: 170px;"><a href="#"><img src="#"></a></th>
+            <th style="width: 500px;" class="left"><a href="#">思念真果仁大汤圆(八宝果仁)454g</a></th>
+            <th style="width: 100px;">
+                <div class="price-decoration">￥9.00</div>
+                <div class="price">￥8.50</div>
+            </th>
+            <th style="width: 170px;">
+                <button type="button" class="minus">-</button>
+                <input type="text" name="123" class="count" value="1" data-id="'+goods_list[i].goods_id+'">
+                <button type="button" class="add">+</button>
+            </th>
+            <th style="width: 120px;">
+              <div class="red css_red">￥123</div>
+            </th>
+            <th>
+                <a href="#"><div class="remove">&#12288;移入收藏夹</div></a>
+                <div class="del" data-toggle="modal" href="#myModal">&#12288;删除</div>
+            </th>
+          </tr>
+        </table>
+      </div> -->
+    </div>
+    <!-- 总金额 -->
+    <div class="trolley-bottom">
+        <input type="checkbox" checked="checked" id="diecheck" class="goods_checkbox">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a id="allkill" style="cursor: pointer;">删除</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#">移入收藏夹</a>
+        <span class="trolley-bottom-account">￥73.0</span>
+        <span>总金额：</span>
+        <span id="allcounts"><a class="howmanygoods">3</a>件商品&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+    <!-- 已优惠 -->
+    <div class="trolley-bottom-accounts">
+        <span id="discount" class="numb">-￥0.0</span>
+        <span>已优惠：</span>
+    </div>
+    <!-- 运费 -->
+    <div class="trolley-bottom-accounts">
+        <span class="numb">￥00.0</span>
+        <span>运费：</span>
+    </div>
+    <!-- 应付总额 -->
+    <div class="trolley-bottom-accounts">
+        <span class="numb allmoney">￥83.0</span>
+        <span>应付总额：</span>
+    </div>
+    <!-- 结算 -->
+    <div class="trolley-acc" id="boxs">
+        <button type="button" class="settlement">结算</button>
+        <span id="counts" class="allmoney">￥83.0</span>
+        <div class="title">应付总额：</div>
+    </div>
+    <div class="abchidden"">
+      <div class="trolley-acc">
+        <button type="button" class="settlement">结算</button>
+        <span class="allmoney">￥83.0</span>
+        <div class="title">应付总额：</div>
+      </div>
+    </div>
+    
+
+
+    <div id="footer_img"><img src="./png/bottom.png" width="100%"></div>
+    <div id="Copyright">
+    关于我们  | 联系我们  | 商家入驻  | 营销中心  | 友情链接<br/>
+    Copyright © 2004-2015 进乐宝 版权所有
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./js/shopcar.js"></script>
+  </body>
+</html>

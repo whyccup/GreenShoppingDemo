@@ -1,0 +1,531 @@
+body{
+  font-size: 15px !important;
+  margin: 0;
+  padding: 0;
+  color: #9C9C9C !important;
+  background: #f4f2f3 !important;
+  font-family: "Arial", "微软雅黑" !important;
+  overflow-x: hidden;
+}
+*{
+  box-sizing: border-box;
+}
+a{
+ text-decoration: none !important;
+}
+ul{
+  padding: 0;
+  margin: 0;
+}
+ul li{
+  list-style: none;
+}
+button{
+  cursor:pointer
+}
+#loading{
+  width: 100%;
+  height:100%;
+  position: fixed;
+  background: rgba(0,0,0,0.6);
+  z-index: 9999;
+  align-content: center;
+}
+#loading-animation{
+  width: 300px;
+  height:300px;
+  margin:0 auto;
+  position: relative;
+  top: 30%;
+}
+.toTop {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  background: url(../png/upward.png) no-repeat;
+  cursor: pointer;
+  display: block;
+  z-index: 2;
+}
+.hanggaocuowu{
+  padding: 0;
+  margin: 0;
+}
+#header{
+  background-color: #ededed;
+  width: 100%;
+  height: 35px;
+  clear: both;
+}
+#header ul li{
+  line-height: 35px;
+}
+#header a{
+  display: inline-block;
+  color: #38ba5e;
+}
+#header .header-font{
+  height: 35px;
+  width: 1200px;
+  margin:0 auto;
+}
+
+#header .header-font .welcome ul li{
+  display: inline;
+  float: left;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 30px;
+}
+#header .header-font .myself{
+  float: right;
+  right: 0;
+  height: 35px;
+}
+#header .header-font .myself ul li{
+  display: inline;
+  padding: 0;
+  margin: 0;
+  padding: 0 15px;
+  line-height: 35px;
+}
+#serach{
+  width: 1200px;
+  margin:0 auto;
+}
+#serach .serach-log{
+  display: inline;
+  position: relative;
+  top: 15px;
+  left: 10px;
+  z-index: 3;
+  float: left;
+}
+#serach .serach-input{
+  display: inline;
+  position: relative;
+  top: 50px;
+  left: 120px
+}
+#serach .serach-input input{
+  width:450px;
+  height: 40px;
+  border: 1px solid #38ba5e;
+  text-indent: 7px;
+  line-height: 40px;
+}
+#serach .serach-input button{
+  position: relative;
+  right: 425px;
+  float: right;
+  width: 85px;
+  height: 40px;
+  border: none;
+  background: #38ba5e;
+  text-align: center;
+  color: #fff;
+}
+#serach .serach-car{
+  float: right;
+  position: relative;
+  top: 45px;
+}
+#serach .serach-car .serach-car-log img{
+  z-index: 3;
+  position: relative;
+  bottom: 4px;
+  right: 9px;
+}
+#serach .serach-car .serach-car-log .mycar{
+  z-index: 2;
+  position: relative;
+  bottom: 52px;
+  left: 10px;
+  width: 120px;
+  height: 40px;
+  border: 1px solid #f1f1f1;
+  background: #fafafa;
+  line-height: 40px;
+  text-indent: 40px;
+}
+#serach .serach-car .nub{
+  z-index: 3;
+  position: relative;
+  bottom: 91px;
+  left: 130px;
+  background: #eebf20;
+  color: #fff;
+  width: 32px;
+  height: 38px;
+  text-align: center;
+  font-size: 23px;
+  padding-top: 4px;
+}
+#serach .serach-bottom{
+  position: relative;
+  left: 120px;
+  top:50px;
+}
+#daohang{
+  clear: both;
+  width: 100%;
+  height: 50px;
+  margin: 0 auto;
+  border-bottom: 2px solid #38ba5e;
+  z-index: 2;
+  position: relative;
+  bottom: 25px;
+}
+#daohang ul{
+  clear: both;
+  padding: 0;
+  width: 1200px;
+  margin: 0 auto;
+  height: 50px;
+  line-height: 50px;
+}
+#daohang ul li{
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 16px;
+  float: left;
+  cursor: pointer
+}
+#daohang  a{
+  display: inline-block;
+  width: 100%
+  height:100%;
+  color: #000
+}
+#all{
+  background-color: #38ba5e;
+  width: 260px;
+}
+#all a{
+  color: #fff;
+}
+#breadcrumbs{
+  width: 1200px;
+  height: 47px;
+  line-height: 47px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  background-color: #FFF;
+  text-indent: 10px;
+  font-size: 16px;
+}
+/*3圆总位置*/
+.trolley-show-status {
+  width: 1200px;
+  height: 140px;
+  margin:0 auto;
+  margin-top: 30px;
+  text-align: center;
+  position: relative;
+}
+/*3圆各位置*/
+.trolley-status {
+  width: 160px;
+  margin-right: 110px;
+  display: inline-block;
+  text-align: center;
+  margin-top: 30px;
+  position: relative;
+  z-index: 100;
+}
+
+/*圆的样式*/
+.trolley-round {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: #d6d6d6;
+  font-size: 24px;
+  text-align: center;
+  line-height: 40px;
+  margin: 0 auto;
+}
+/*不同圆颜色*/
+.trolley-show-status .rount-on {
+  background: #39ba5e;
+  color: #fff;
+}
+/*圆下面文字*/
+.trolley-status span {
+  width: 100%;
+  text-align: center;
+  display: block;
+  font-size: 20px;
+  color: #343434;
+  line-height: 40px;
+  margin: 10px auto;
+}
+/*不同字的样式*/
+.trolley-show-status .text-on {
+  color: #39ba5e;
+}
+
+/*圆之间连线的位置及原始样式*/
+.trolley-show-status .line {
+  width: 550px;
+  height: 9px;
+  background: #d6d6d6;
+  position: absolute;
+  top: 45px;
+  left: 320px;
+  z-index: 1;
+}
+/*圆之间连接线的改变样式*/
+/*.trolley-show-status .line span {
+  height: 9px;
+  background: #39ba5e;
+  display: block;
+}*/
+.user-title{
+  width: 1200px;
+  height: 40px;
+  margin:0 auto;
+  margin-top: 20px;
+  color:#38bb5e ;
+  border-bottom: 4px solid #38bb5e;
+  line-height: 34px;
+  font-weight: bold;
+  font-size: 16px;
+}
+#list{
+  width: 1200px;
+  height: 39px;
+  margin: 0 auto;
+}
+.title th {
+  vertical-align: middle !important;
+  text-align: center;
+  color: #484848;
+  font-weight: normal;
+}
+.left {
+  text-align: left !important;
+}
+
+/*商品总站为*/
+#shopcar-ulli{
+  width: 1200px;
+  margin :0 auto;
+}
+/*商品单个站位*/
+.table{
+  margin-bottom: 0px !important;
+}
+.shopcar-goods{
+  margin-bottom: 15px;   
+  background: #fff;
+  width: 100%;
+  border: 1px solid #ddd;
+  display: block;
+  text-align: center;
+}
+.shopcar-goods img {
+  width: 110px;
+  height: 110px;
+  border: 1px solid #dfddde;
+}
+.shopcar-goods .left a{
+  color: #333;
+  text-decoration: none;
+}
+/*单价*/
+.price-decoration {
+  text-decoration: line-through;
+}
+.price {
+  color: #6fca87;
+  font-size: 14px;
+}
+/*数量选择*/
+/*加号按钮*/
+.add{
+  width: 25px;
+  height: 25px;
+  color: #959595;
+  line-height: 0;
+  text-align: center;
+  border: 1px solid #dedede;
+  background: #f1f1f1;
+}
+/*减号按钮*/
+.minus {
+  width: 25px;
+  height: 25px;
+  color: #959595;
+  line-height: 0;
+  text-align: center;
+  border: 1px solid #dedede;
+  background: #f1f1f1;
+}
+/*数量的框*/
+.css_count {
+  width: 65px;
+  height: 25px;
+  color: #959595;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #dedede;
+  background: #f1f1f1;
+  margin: 0 5px;
+}
+/*金额*/
+.css_red {
+  color: #e20f18;
+  font-size: 16px;
+}
+/*移入收藏夹*/
+.remove {
+  color: #a5a3a4;
+  display: block;
+  text-align: left;
+}
+/*删除*/
+.del {
+  color: #39bc5f;
+  display: block;
+  text-align: left;
+}
+/*总金额*/
+.trolley-bottom {
+  width: 1200px;
+  height: 35px;
+  background: #fff;
+  line-height: 35px;
+  padding-left: 11px;
+  padding-right: 20px;
+  margin:0 auto;
+  margin-top: 25px;
+}
+.trolley-bottom a{
+  color: #333;
+  text-decoration: none;
+}
+.howmanygoods{
+  color:  #e20f18 !important;
+}
+.trolley-bottom span{
+  float: right;
+  padding-right: 6px;
+  color: #333;
+  font-size: 14px;
+} 
+.trolley-bottom-account{
+  width: 70px;
+  text-align: left;
+  margin-left: 10px;
+  padding: 0 !important;
+}
+/*已优惠*/
+.trolley-bottom-accounts {
+  width: 1200px;
+  height: 35px;
+  line-height: 35px;
+  padding-right: 20px;
+  text-align: right;
+  margin: 0 auto;
+}
+.trolley-bottom-accounts span {
+  float: right;
+  padding-right: 6px;
+  color: #333;
+  font-size: 14px;
+}
+.trolley-bottom-accounts .numb{
+  color: #333;
+  font-size: 14px;
+  width: 70px;
+  float: right;
+  text-align: left;
+  margin-left: 10px;
+}
+/*小车票据*/
+.trolley-acc{
+  width:1200px;
+  margin: 0 auto;
+  text-align: right;
+  height: 75px;
+  line-height: 50px;
+  margin-top: 10px;
+  border-bottom: 1px solid #d6d6d6;
+}
+#boxs{
+  margin-bottom: 200px;
+}
+/*应付总额*/
+.trolley-acc .title{
+  float: right;
+  margin-right: 10px;
+  color: #333;
+  font-size: 14px;
+}
+/*结算金额*/
+.trolley-acc span{
+  color: #df1c20;
+  font-size: 30px;
+  line-height: 50px;
+  float: right;
+  margin-right: 20px;
+}
+/*结算按钮*/
+.trolley-acc button{
+  width: 200px;
+  height: 40px;
+  background: #c40001;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  border: none;
+  float: right;
+}
+/*再来一遍结算按钮*/
+.abchidden{
+  width: 100%;
+  background-color: #d6d6d6;
+  position: fixed;
+  bottom: 0;
+}
+/*不同的*/
+.abchidden .trolley-acc{
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 0px solid #d6d6d6;
+  margin-top: 0px;
+}
+.abchidden span{
+  margin :5px 0;
+  margin-right: 20px;
+}
+.abchidden button{
+  margin :10px 0;
+}
+
+
+
+
+
+#footer_img{
+  position: relative;
+  top:2px;
+  margin:0 auto;
+}
+#Copyright{
+  position: relative;
+  background-color: #38bb5e;
+  width: 100%
+  margin:0 auto;
+  height: 80px;
+  line-height: 40px;
+  text-align:center;
+  color: #fff;
+  font-size: 16px;
+}

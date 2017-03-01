@@ -1,0 +1,118 @@
+body{
+	font-size: 14px;
+    font-family: Arial, 微软雅黑;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    background: rgb(244, 242, 243);
+}
+a{
+	text-decoration:none;
+	color: #39ba5e;
+}
+.header{
+	position: relative;
+	width: 1200px;
+	margin:0 auto;
+	margin-top: 20px;
+}
+.header #header_img{
+	float:left;
+	position: relative;
+}
+.header span{
+	border-left: 3px solid #38bb5e;
+    width: 120px;
+    height: 50px;
+    display: inline-block;
+    line-height: 50px;
+    font-size: 24px;
+    color: #38bb5e;
+    text-indent: 10px;
+    margin-top: 30px;
+}
+
+.register{
+	position: relative;
+	left:200px;
+	width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 60px;
+    padding-bottom: 170px;
+    clear: both;
+}
+.register div{
+	padding: 20px;
+	clear: both;
+}
+.register label {
+	display: block;
+	float: left;
+	clear: left;
+	width: 100px;
+	text-align: right;
+	line-height: 40px;
+}
+.register .abc{
+	text-indent: 5px;
+ 	display: block;
+  	float: left;
+  	clear: right;
+  	line-height: 40px;
+  	height: 40PX;
+  	width: 300px;
+  	border: 2px solid #f2f2f2;
+  	border-radius: 5px;
+}
+#huoqu{
+	padding: 0;
+	display: inline-block;
+}
+#huoqu img{
+	width: 120px;
+	height: 35px;
+	position: absolute;
+	top: 10px;
+	left: 425px;
+	
+}
+.register #imgCaptcha{
+	display: inline-block;
+}
+.register span{
+	float: left;
+}
+.register #xieyi{
+	position: relative;
+	left: 125px;
+	width: 250px;
+	padding: 10px;
+}
+.register #xieyi input{
+	border: 2px solid #f2f2f2;
+  	border-radius: 5px;
+ }
+
+.register #button{
+	position: relative;
+	left: 120px;
+	width: 300px;
+}
+
+#footer_img{
+	position: relative;
+	top:2px;
+	margin:0 auto;
+}
+#Copyright{
+	position: relative;
+	background-color: #38bb5e;
+	width: 100%
+	margin:0 auto;
+	height: 80px;
+	line-height: 40px;
+	text-align:center;
+	color: #fff;
+	font-size: 16px;
+}

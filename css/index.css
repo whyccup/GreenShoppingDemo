@@ -1,0 +1,425 @@
+body{
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  color: #9C9C9C;
+  background: #f4f2f3;
+  font-family: "Arial", "微软雅黑" !important;
+}
+a{
+ text-decoration: none;
+ color: #38ba5e;
+}
+ul li{
+  list-style: none;
+}
+button{
+  cursor:pointer
+}
+#back{
+  display: block;
+  background-color: #38ba5e;
+  font-size:17px;
+  width: 30px;
+  height: 100px;
+  position: fixed;
+  right: 0;
+  top:500px;
+}
+
+
+.hanggaocuowu{
+  padding: 0;
+  margin: 0;
+}
+#header{
+  background-color: #ededed;
+  width: 100%;
+  height: 35px;
+  clear: both;
+}
+#header ul li{
+  line-height: 35px;
+}
+#header .header-font{
+  height: 35px;
+  width: 1200px;
+  margin:0 auto;
+}
+
+#header .header-font .welcome ul li{
+  display: inline;
+  float: left;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 30px;
+}
+#header .header-font .myself{
+  float: right;
+  right: 0;
+  height: 35px;
+}
+#header .header-font .myself ul li{
+  display: inline;
+  padding: 0;
+  margin: 0;
+  padding: 0 15px;
+  line-height: 35px;
+}
+#serach{
+  width: 1200px;
+  margin:0 auto;
+
+}
+#serach .serach-log{
+  display: inline;
+  position: relative;
+  top: 15px;
+  left: 10px;
+  z-index: 3;
+  float: left;
+}
+#serach .serach-input{
+  display: inline;
+  position: relative;
+  top: 50px;
+  left: 120px
+}
+#serach .serach-input input{
+  width:450px;
+  height: 40px;
+  border: 1px solid #38ba5e;
+  text-indent: 7px;
+  line-height: 40px;
+}
+#serach .serach-input button{
+  position: relative;
+  right: 6px;
+  width: 85px;
+  height: 44px;
+  border: none;
+  background: #38ba5e;
+  text-align: center;
+  color: #fff;
+}
+#serach .serach-car{
+  float: right;
+  position: relative;
+  top: 45px;
+}
+#serach .serach-car .serach-car-log img{
+  z-index: 3;
+  position: relative;
+
+}
+#serach .serach-car .serach-car-log .mycar{
+  z-index: 2;
+  position: relative;
+  bottom: 52px;
+  left: 20px;
+  width: 120px;
+  height: 40px;
+  border: 1px solid #f1f1f1;
+  background: #fafafa;
+  line-height: 40px;
+  text-indent: 40px;
+}
+#serach .serach-car  .nub{
+  z-index: 3;
+  position: relative;
+  bottom: 94px;
+  left: 130px;
+  background: #eebf20;
+  color: #fff;
+  width: 32px;
+  height: 38px;
+  text-align: center;
+  font-size: 23px;
+  padding-top: 4px;
+
+}
+#serach .serach-bottom{
+  position: relative;
+  left: 120px;
+  top:50px;
+
+}
+#daohang{
+  clear: both;
+  width: 100%;
+  height: 50px;
+  margin: 0 auto;
+  border-bottom: 2px solid #38ba5e;
+  z-index: 2;
+  position: relative;
+  bottom: 25px;
+}
+
+#daohang ul{
+  clear: both;
+  padding: 0;
+  width: 1200px;
+  margin: 0 auto;
+  height: 50px;
+  line-height: 50px;
+}
+
+#daohang ul li{
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 16px;
+  float: left;
+  cursor: pointer
+
+}
+#daohang  a{
+  color: #000
+
+}
+#all{
+  background-color: #38ba5e;
+  width: 200px;
+}
+#all a{
+  color: #fff;
+}
+#shop{
+  width: 1200px;
+  height: 480px;
+  margin: auto;
+  position: relative;
+  bottom: 24px;
+  z-index:1;
+  clear: both;
+
+
+}
+#shop .fenlei{
+  width: 200px;
+  padding: 0;
+  margin: 0;
+  float: left;
+
+
+
+}
+#shop .fenlei li{
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #38ba5e;
+  text-align: center;
+  font-size:16px;
+
+}
+
+#shop .fenlei li a{
+  display: inline-block;
+  color: #fff;
+  padding: 0 55px;
+}
+#shop .fenlei li a:hover{
+  background-color: #38ba1e;
+}
+
+
+#shop p{
+  width: 755px;
+  height: 440px;
+  float: left;
+  margin: 20px;
+  background-color: #ededed;
+  text-align: center;
+  line-height: 420px;
+  
+}
+#shop .zixun{
+  float: right;
+  width: 200px;
+  height: 480px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #f4f0f0;
+  background-color: #fff;
+
+
+}
+#shop .zixun ul{
+  padding: 0;
+}
+#shop .zixun ul .yaoezi{
+  border-bottom: 1px solid #000;
+}
+#shop .zixun ul .yaoezi a{
+  color: #38ba5e;
+  position: relative;
+  left: 110px;
+
+}
+#shop .zixun ul li{
+  width: 100%;
+  line-height: 40px;
+  height: 40px;
+  font-size: 13px;
+  text-indent:6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+
+}
+#shop .zixun ul li a{
+  color: #000;
+
+
+}
+#shop .zixun ul li a:hover{
+  color: #38ba5e
+}
+#shop .zixun ul li a span{
+  font-weight:bold
+
+}
+#twoSelect{
+  position: relative;
+  float: left;
+  z-index: 9998;
+}
+#twoSelect a{
+  position: relative;
+  top:20px;
+  margin: 20px;
+  padding: 0 10px;
+  border-right: 1px solid #000;
+  color: #000;
+}
+#twoSelect a:hover{
+  color: #38ba1e;
+}
+#twoSelect #drink{
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  border: 1px solid #38ba1e;
+  background-color: #fff;
+  left: 0px;
+  width: 200px;
+  height:478px;
+}
+
+#today{
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+
+}
+#today img{
+  height: 380px;
+  width: 380px; 
+}
+#today .bg{
+  position: relative;
+  z-index: 1;
+  float: left;
+  width: 380px;
+  height: 380px;
+  margin: 10px;
+  display: inline-block;
+}
+#today:after{
+  clear: both;
+  display: block;
+  content: ".";
+  visibility: hidden;
+  overflow: hidden;
+}
+#today .top-center {
+  cursor: pointer;
+  background:url(../png/spec-time.png); 
+}
+#today .hide{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    overflow: hidden;
+    display: none;
+}
+#today .hide-pay{
+  width: 163px;
+  height: 163px;
+  background: #38ba5e;
+  text-align: center;
+  line-height: 163px;
+  font-size: 30px;
+  color: #fff;
+  margin: 0 auto;
+  margin-top: 50px;
+  position: relative;
+  bottom:220px;
+  transition: bottom 1s;
+}
+#today .hide:hover .hide-pay{
+  bottom: 0px;
+  transition: bottom 0.5s;
+}
+
+#today .hide-btn{
+  width: 250px;
+  height: 50px;
+  background: transparent;
+  text-align: center;
+  line-height: 50px;
+  font-size: 16px;
+  color: #fff;
+  margin: 0 auto;
+  margin-top: 30px;
+  border-radius: 20px;
+  border: 2px solid #e1e1e1;
+  cursor: pointer;
+  position: relative;
+  top: 180px;
+}
+/*#today .hide:hover{
+  width: 100%;
+  height: 100%;
+  transition: width 0.1s,height 0.1s;
+}*/
+#today .hide:hover .hide-btn{
+  top:0px;
+  transition: top 0.5s;
+}
+.toTop {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  background: url(../png/upward.png) no-repeat;
+  cursor: pointer;
+  display: block;
+  z-index: 2;
+}
+#footer_img{
+  position: relative;
+  top:3px;
+  margin:0 auto;
+  z-index: 1;
+}
+#Copyright{
+  position: relative;
+  background-color: #38bb5e;
+  width: 100%
+  margin:0 auto;
+  height: 80px;
+  line-height: 40px;
+  text-align:center;
+  color: #fff;
+  font-size: 16px;
+  z-index: 1;
+}

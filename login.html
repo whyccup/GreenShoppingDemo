@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录页面</title>
+	<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./css/login_ui.css">
+</head>
+<body>
+	<div class="header">
+		<div id="header_img" ><img src="./png/header-logo.png" alt></div>
+		<span>登录</span>
+	</div>
+	<div class="content">
+		<div id="login_img"><img src="./png/login-left.png" alt></div>
+		<div class="login">
+			<div id="title"><span>登录</span></div>
+			<form action="#">
+				<div><input id="username" type="text" placeholder="用户名(你猜是不是你的手机号)"><span style="color: red"></span></div>
+				<div><input id="password" type="password" placeholder="密码"><span style="color: red"></span></div>
+			</form>
+			<div id="forget"><a href="./forgetpwd.html">忘记密码</a></div>
+			<button id="login_button" type="button" class="btn btn-success btn-block btn-lg" onclick="sendLogin()">登录</button>
+			<div id="register">新用户,<a href="./register.html">立即注册</a></div>
+		</div>
+	</div>
+	<div id="footer_img"><img src="./png/bottom.png" width="100%"></div>
+	<div id="Copyright">
+		关于我们	|	联系我们	|	商家入驻	|	营销中心	|	友情链接<br/>
+		Copyright	©	2004-2015	进乐宝	版权所有
+    </div>
+	</div>
+	<script type="text/javascript">
+	
+	
+	$("#username").blur(function(event) {
+		var abc = $("#username");
+		if (!/^\w{6,12}$/.test(abc.val())) {
+				abc.next().text('你的用户名不符合规范或过短、过长');
+				abc.css("border","1px solid #e22");
+				return;
+				}
+	});
+	$("#password").blur(function(event) {
+		var abc = $("#password");
+		if (!/^\w{6,12}$/.test(abc.val())) {
+				abc.next().text('你的密码不符合规范或过短、过长');
+				abc.css("border","1px solid #e22");
+				return;
+			}
+	});
+	$("#username").focus(function(event) {
+		var abc = $("#username");
+		abc.css("border","1px solid #dedede");         
+        abc.next().text('');
+	});
+	$("#password").focus(function(event) {
+		var abc = $("#password");
+		abc.css("border","1px solid #dedede");         
+        abc.next().text('');
+	});
+
+
+    
+
+
+    function sendLogin(){
+    	var xhr = new XMLHttpRequest();
+    	xhr.onreadystatechange = function(){
+    		if(xhr.readyState === 4){
+    			console.log(xhr);
+    			if(xhr.response.status == 200){
+    				alert('登陆成功！');
+    				window.location.href='./index.html';
+    				localStorage.phone = phone;
+    				localStorage.pwd = pwd;
+    				localStorage.token = xhr.response.data.user.token
+    				console.log(localStorage);
+    			}else{
+    				alert(xhr.response.error);
+    			}
+    		}
+    	}
+    	
+    	var phone = $("#username").val();
+		var pwd = $("#password").val();
+	
+	
+    	xhr.open('post','http://192.168.1.8:8006/v1/account/login',true);
+    	xhr.responseType = 'json';
+    	xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+    	var data = 'phone='+phone+'&pwd='+pwd+'';
+    	xhr.send(data);
+    }
+    
+	</script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href=".\css\goods.css"></link>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>商品详情</title>
+  </head>
+  <body>
+    <div id="toTop" class="toTop" title="回到顶部"></div>
+    <div id="header">
+      <div class="header-font">
+        <div class="welcome">
+          <ul class="hanggaocuowu">
+            <li>你好，欢迎光临接斧子</li>
+            <li><a id="zhanghao" href="login.html">请登录</a></li>
+            <li><a id="yidenglu" href="register.html">免费注册</a></li>
+          </ul>
+        </div>
+        <div class="myself">
+          <ul class="hanggaocuowu">
+            <li><a href="#">个人中心</a></li>
+            <li><a href="./myorder.html">我的订单</a></li>
+            <li><a href="./like.html">收藏夹</a></li>
+            <li><a href="#">充值</a></li>
+            <li><a href="#">手机版</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="serach">
+      <div class="serach-log">
+        <img src=".\png\header-logo.png" alt="进乐宝"></img>
+      </div>
+      <div class="serach-input">
+        <input type="text" placeholder="请输入商品名称">
+        <button>搜索</button>
+      </div>
+      <a href="./shopcar.html">
+        <div class="serach-car">
+          <div class="serach-car-log">
+            <img src=".\png\shopping-trolley.png" alt="我的购物车"></img>
+            <div class="mycar">我的购物车</div>
+          <div class="nub">0</div>
+          </div>
+        </div>
+      </a>
+      <div class="serach-bottom">
+        <span>西瓜</span>
+        <span>葡萄</span>
+        <span>苹果</span>
+        <span>西红柿</span>
+      </div>
+    </div>
+    <div id="daohang">
+      <ul>
+        <li id="all"><a href="./index.html">全部商品</a></li>
+        <a href="./index.html"><li>首页</li></a>
+        <a href="./today.html"><li>今日特价</li></a>
+        <a href="#"><li>精品推荐</li></a>
+        <a href="#"><li>新品上市</li></a>
+        <a href="#"><li>销售排行</li></a>
+      </ul>
+    </div>
+    <div class="goods">
+      <!-- main adj.n. 主要的 -->
+      <div id="goods-main">
+        <div class="goods-imgs">
+          <div class="goods-imgs-img">
+            <a>
+              <img src="#">
+              <!-- <div></div>实现大图中的鼠标悬浮框，0.5透明 -->
+            </a>
+            <!-- <div></div>实现大图旁的放大图，放大的位置根据鼠标悬浮框 -->
+          </div>
+          <!-- <div class="goods-imgs-thumb"><a><img src="#"></a></div> --><!-- 点击之后要替换大图 -->
+        </div>
+        <div class="goods-data">
+          <div class="goods-data-name">【进乐宝】双汇王中王</div>
+          <div class="goods-price">
+            <div class="price-old">
+              <span>原价</span>￥
+            </div>
+            <div class="price-sale">
+              <span>优惠</span>￥
+            </div>
+          </div>
+          <!-- 配送  dispatching -->
+          <div class="goods-dispatching">
+            <span>配送</span>
+            <span class="nomoney">9.9元免运费</span>
+            <div class="goods-like"><span>收藏</span><img src="./png/xin.png"></div>
+          </div>
+          <div class="goods-numb">
+            <span>数量</span>
+            <!-- 减号 n. minus -->
+            <button id="minus">-</button>
+            <input type="text" id="count" value="1"  onkeypress="return event.keyCode>=48&&event.keyCode<=57"><!-- 拒绝非数字输入 -->
+            <button id="add">+</button>
+            <div class="stock">库存<span>1234</span>件</div>
+          </div>
+          <div class="goods-buy">
+            <button id="goods-quickBuy" class="btn btn-danger">立即购买</button>
+            <button id="goods-joinCar" class="btn btn-success">加入购物车</button>
+          </div>
+          <div class="goods-sendTime">
+            配送时间:预计<span id="sendTime"></span>前送达(从支付之后开始计算，30分钟内送达)
+          </div>
+        </div>
+        <!-- info.信息 -->
+          <div id="goods-info">
+            <div class="info-title">
+              <span id="title-xiangqin" class="green">商品详情</span>
+              <span id="title-guige">商品规格</span>
+              <span id="title-wenzhang">相关文章</span>
+              <span id="title-pingjia">用户评价</span>
+            </div>
+            <img src="./png/147522660135868788.jpg">
+            <div class="info-img"></div>
+            <img src="./png/147522664813095042.jpg">
+            <div id="big-guige" class="info-title-big">商品规格</div>
+            <!-- 这里容易ID重复 -->
+            <div id="goodsguige">
+              <span>商品名称：</span>
+              <span>商品编号：</span>
+              <span>品牌：</span>
+              <span>商品规格：</span>
+            </div>
+            <div id="big-wenzhang" class="info-title-big">相关文章</div>
+            <div id="big-pingjia" class="info-title-big">用户评价<span>(0)</span></div>
+            <div class="info-user-fen">
+              <div id="_fen">平均分<span>5</span></div>
+              <img src="./png/heihei.png">
+              <div id="pingjia">
+                <button class="btn btn-warning">我要评论</button>
+                <span>你得先买</span>
+              </div>
+            </div>
+            <div class="godds-comment">
+                <ul>
+                  <!-- li>
+                    <div class="content">
+                      <div class="buyer-text">123</div>
+                      <div class="reply">谢谢惠顾</div>  
+                    </div>
+                    <div class="comment-user"><span>username</span><img src="./png/grade3.png"></div>
+                  </li> -->
+                </ul>
+            </div>
+          </div> 
+      </div>
+      <div id="webuy">
+        <img src="./png/buy.jpg">
+        <div class="webuy-goods">
+          <img class="webuy-img" src="#">
+          <span>123</span>
+        </div>
+      </div>
+    </div>
+    <div id="footer_img"><img src="./png/bottom.png" width="100%"></div>
+    <div id="Copyright">
+    关于我们  | 联系我们  | 商家入驻  | 营销中心  | 友情链接<br/>
+    Copyright © 2004-2015 进乐宝 版权所有
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="./js/goods.js"></script>
+  </body>
+</html>

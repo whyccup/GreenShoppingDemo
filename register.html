@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册页面</title>
+	<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./css/register_ui.css">
+</head>
+<body>
+	<div class="header">
+		<div id="header_img"><img src="./png/header-logo.png" alt></div>
+		<span>注册</span>
+	</div>
+	<div class="register">
+		<form>
+		<div>
+			<label>手机号：</label>
+			<input id="phone" class="abc" type="text" name="phone">
+			<span style="color: red"></span>
+		</div>
+		<div style="position: relative;">
+			<label>手机验证码：</label>
+			<input id="captcha" class="abc" type="text" name="yanzhenma">
+			<!-- <span style="color: red"></span> -->
+			<div id="huoqu"></div>
+		</div>
+		<div>
+			<label>登录密码：</label>
+			<input  id="pwd" class="abc" type="password" name="login_pwd">
+			<span style="color: red"></span>
+		</div>
+		<div>
+			<label>确认登录密码：</label>
+			<input class="abc" type="password" name="apwd" id="apwd">
+			<span style="color: red"></span>
+		</div>
+		<div id="xieyi">
+			<input type="checkbox" name="xieyi" id="fuwuxieyi">
+			<a href="#">《进乐宝服务协议》</a>
+		</div>
+		</form>
+		<button class="btn btn-success btn-lg" id="button" onclick="sendRegister()">注册</button>
+	</div>
+	<div id="footer_img"><img src="./png/bottom.png" width="100%"></div>
+	<div id="Copyright">
+		关于我们	|	联系我们	|	商家入驻	|	营销中心	|	友情链接<br/>
+		Copyright	©	2004-2015	进乐宝	版权所有
+    </div>
+    <script type="text/javascript">
+    	$("#phone").blur(function(event) {
+    		var el = $("#phone");
+    		if (!/^\d{11}$/.test(el.val())) {
+			el.next().text('这是你的电话？');
+			el.css("border", "1px solid #e22");
+			}
+    	});
+    	$("#phone").focus(function(event) {
+    		var el = $("#phone");                               
+        	el.next().text('');
+        	el.css("border", "1px solid #dedede");    
+    	});
+   //  	$("#captcha").blur(function(event) {
+   //  		var el = $("#captcha");
+   //  		if (!/^\w{4}$/.test(el.val())) {
+			// el.next().text('这不是正确的验证码！');
+			// el.css("border", "1px solid #e22");
+			// }
+    	// });
+    	// $("#captcha").focus(function(event) {
+    	// 	var el = $("#captcha");                               
+     //    	el.next().text('');
+     //    	el.css("border", "1px solid #dedede");    
+    	// });
+    	$("#pwd").blur(function(event) {
+    		var el = $("#pwd");
+    		if (!/^\w{6,11}$/.test(el.val())) {
+			el.next().text('你的密码不规范！');
+			el.css("border", "1px solid #e22");
+			}
+    	});
+    	$("#pwd").focus(function(event) {
+    		var el = $("#pwd");                               
+        	el.next().text('');
+        	el.css("border", "1px solid #dedede");    
+    	});
+    	$("#apwd").blur(function(event) {
+    		var el = $("#apwd");
+    		if (!/^\w{6,11}$/.test(el.val())) {
+			el.next().text('确认密码不规范！');
+			el.css("border", "1px solid #e22");
+			}
+    	});
+    	$("#apwd").focus(function(event) {
+    		var el = $("#apwd");                               
+        	el.next().text('');
+        	el.css("border", "1px solid #dedede");    
+    	});
+
+    	var phone = $("#phone");
+    	var captcha = $("#captcha");
+    	var pwd = $("#pwd");
+
+
+//创建一个注册按钮给端口发送data的方法
+function sendRegister(){
+
+	// 判断服务协议是否选中
+	// var haha = $("#fuwuxieyi")
+	var haha = document.getElementsByName('xieyi');
+	var bol_check = false; //默认没有选中
+ 	for (var i = 0; i < haha.length; i++) {
+   		if (haha[i].checked) {
+    	bol_check = true;
+      	break;
+      }
+  	}
+
+ 	if (!bol_check) {
+  		alert('请确认你是否同意了《进乐宝服务协议》');
+	}
+
+
+
+	//创建一个异步传输(Ajax)XMLHttpRequest的实例
+	var xhr = new XMLHttpRequest();
+	//指定一个通信状态改变时的回掉函数(通信状态改变后才会触发)
+	xhr.onreadystatechange = function(){
+		//判断通信成功，状态为4的时候
+		if (xhr.readyState === 4) {
+			//此时已经拿到返回的内容，我们打出来
+			console.log(xhr);
+			//判断服务器返回的status状态为200(此时是服务器给定的注册成功的码)的时候
+			if (xhr.response.status == 200) {
+				//还可以做任何想做的操作
+				alert('恭喜你注册成功！');
+				window.location.href='./login.html';
+			}else{
+				alert(xhr.response.error);
+				//弹出服务器给出的错误信息。
+			}
+		}
+		//创建监控报错的回掉函数的方法
+		// xhr.onerror = function(e){
+		// 	console.log(xhr.statusText);
+		// }
+	}
+		//打开请求(请求方式，请求接口，异步(true)还是同步(false))
+		xhr.open('post','http://192.168.1.8:8006/v1/account/register',true);
+		//设置请求响应类型
+		xhr.responseType = 'json';
+		//设置http请求头
+		//纯文本请求头
+		xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+		xhr.withCredentials=true;
+		//文本加请求头
+		//xhr.setRequestHeader('Content-Type','application/json');
+		var data = 'phone='+phone.val()+'&pwd='+pwd.val()+'&captcha='+captcha.val()+'&device=9&ip=192.168.1.52';
+		//发送请求
+		xhr.send(data);
+}
+
+ 	$(document).ready(function() {
+ 		$.ajax({
+ 			url: 'http://192.168.1.8:8006/v1/assist/imgCaptcha',
+ 			type: 'POST',
+ 			dataType: 'html',
+ 			xhrFields:{
+ 				withCredentials:true
+ 			},
+ 		})
+ 		.done(function(data) {
+ 			$("#huoqu").append(data);
+ 		});
+ 		
+ 	});
+
+
+    </script>
+</body>
+</html>

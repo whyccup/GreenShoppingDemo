@@ -1,0 +1,349 @@
+body{
+  font-size: 15px !important;
+  margin: 0;
+  padding: 0;
+  color: #9C9C9C !important;
+  background: #f4f2f3 !important;
+  font-family: "Arial", "微软雅黑" !important;
+  overflow-x: hidden;
+}
+a{
+ text-decoration: none !important;
+}
+ul{
+  padding: 0;
+  margin: 0;
+}
+ul li{
+  list-style: none;
+}
+button{
+  cursor:pointer
+}
+.toTop {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  background: url(../png/upward.png) no-repeat;
+  cursor: pointer;
+  display: block;
+  z-index: 2;
+}
+.hanggaocuowu{
+  padding: 0;
+  margin: 0;
+}
+#header{
+  background-color: #ededed;
+  width: 100%;
+  height: 35px;
+  clear: both;
+}
+#header ul li{
+  line-height: 35px;
+}
+#header a{
+  display: inline-block;
+  color: #38ba5e;
+}
+#header .header-font{
+  height: 35px;
+  width: 1200px;
+  margin:0 auto;
+}
+
+#header .header-font .welcome ul li{
+  display: inline;
+  float: left;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 30px;
+}
+#header .header-font .myself{
+  float: right;
+  right: 0;
+  height: 35px;
+}
+#header .header-font .myself ul li{
+  display: inline;
+  padding: 0;
+  margin: 0;
+  padding: 0 15px;
+  line-height: 35px;
+}
+#serach{
+  width: 1200px;
+  margin:0 auto;
+}
+#serach .serach-log{
+  display: inline;
+  position: relative;
+  top: 15px;
+  left: 10px;
+  z-index: 3;
+  float: left;
+}
+#serach .serach-input{
+  display: inline;
+  position: relative;
+  top: 50px;
+  left: 120px
+}
+#serach .serach-input input{
+  width:450px;
+  height: 40px;
+  border: 1px solid #38ba5e;
+  text-indent: 7px;
+  line-height: 40px;
+}
+#serach .serach-input button{
+  position: relative;
+  right: 425px;
+  float: right;
+  width: 85px;
+  height: 40px;
+  border: none;
+  background: #38ba5e;
+  text-align: center;
+  color: #fff;
+}
+#serach .serach-car{
+  float: right;
+  position: relative;
+  top: 45px;
+}
+#serach .serach-car .serach-car-log img{
+  z-index: 3;
+  position: relative;
+  bottom: 4px;
+  right: 9px;
+}
+#serach .serach-car .serach-car-log .mycar{
+  z-index: 2;
+  position: relative;
+  bottom: 52px;
+  left: 10px;
+  width: 120px;
+  height: 40px;
+  border: 1px solid #f1f1f1;
+  background: #fafafa;
+  line-height: 40px;
+  text-indent: 40px;
+}
+#serach .serach-car .nub{
+  z-index: 3;
+  position: relative;
+  bottom: 91px;
+  left: 130px;
+  background: #eebf20;
+  color: #fff;
+  width: 32px;
+  height: 38px;
+  text-align: center;
+  font-size: 23px;
+  padding-top: 4px;
+}
+#serach .serach-bottom{
+  position: relative;
+  left: 120px;
+  top:50px;
+}
+#daohang{
+  clear: both;
+  width: 100%;
+  height: 50px;
+  margin: 0 auto;
+  border-bottom: 2px solid #38ba5e;
+  z-index: 2;
+  position: relative;
+  bottom: 25px;
+}
+#daohang ul{
+  clear: both;
+  padding: 0;
+  width: 1200px;
+  margin: 0 auto;
+  height: 50px;
+  line-height: 50px;
+}
+#daohang ul li{
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 16px;
+  float: left;
+  cursor: pointer
+}
+#daohang  a{
+  display: inline-block;
+  width: 100%
+  height:100%;
+  color: #000
+}
+#all{
+  background-color: #38ba5e;
+  width: 260px;
+}
+#all a{
+  color: #fff;
+}
+#breadcrumbs{
+  width: 1200px;
+  height: 47px;
+  line-height: 47px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  background-color: #FFF;
+  text-indent: 10px;
+  font-size: 16px;
+}
+#my{
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
+  border-bottom: 4px solid #38ba5e;
+}
+#my a{
+  color: #9C9C9C;
+  display: inline-block;
+  height: 35px;
+  line-height: 35px;
+  font-weight: bold;
+  font-size: 16px;
+  padding-right: 15px;
+}
+#my .mygreen{
+  color: #38ba5e;
+}
+#like-goods{
+  width: 1260px;
+  margin: 0 auto;
+  position: relative;
+}
+#like-goods ul{
+  margin:0; 
+  padding: 0;
+  position: relative;
+}
+#like-goods ul:after{
+  clear: both;
+  display: block;
+  content: ".";
+  visibility: hidden;
+  overflow: hidden;
+}
+#like-goods ul li{
+  width: 216px;
+  height: 350px;
+  float: left;
+  background: #fff;
+  margin-left: 27px;
+  margin-top: 25px;
+  position: relative;
+  /*border: 2px solid #f4f2f3; outline不占据内空间*/
+  outline: 2px solid #f4f2f3;
+}
+#like-goods ul li:hover{
+  transition:  1s;
+  box-shadow: 0 0 5px 1px;
+  outline: 2px solid #39ba60;
+}
+#like-goods ul li #deletelike{
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  font-size: 25px;
+  z-index: 9999;
+
+}
+#like-goods ul li .collect-goods{
+  width: 216px;
+  height: 216px;
+  cursor:pointer;
+  z-index: 1;
+}
+#like-goods ul li .collect-price{
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 18px;
+  color: #fc341d;
+  font-weight: bold;
+}
+#like-goods ul li .collect-price span{
+  float: right;
+  font-size: 14px;
+  color: #a3a3a3;
+  text-decoration: line-through;
+}
+#like-goods ul li .collect-content{
+  width: 196px;
+  height: 42px;
+  margin: 0 auto;
+  margin-top: 8px;
+  overflow: hidden;
+  padding: 0 10px 0 10px;
+  line-height: 20px;
+}
+#like-goods ul li .collect-content p{
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  font-size: 13px;
+  color: #333333;
+}
+#like-goods ul li .collect-join{
+  cursor:pointer;
+  width: 170px;
+  height: 40px;
+  margin: 0 auto;
+  background: url(../png/collect-min.png);
+}
+#like-goods ul li .likehidden{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  overflow: hidden;
+  display: none;
+}
+.likehidden span{
+  display: block;
+  color: #FFf;
+  font-size: 16px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 170px;
+  margin-bottom: 5px;
+}
+.likehidden button{
+  width:60px;
+  position: relative;
+  left: 45px;
+}
+
+
+
+#footer_img{
+  position: relative;
+  top:2px;
+  margin:0 auto;
+}
+#Copyright{
+  position: relative;
+  background-color: #38bb5e;
+  width: 100%
+  margin:0 auto;
+  height: 80px;
+  line-height: 40px;
+  text-align:center;
+  color: #fff;
+  font-size: 16px;
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>订单详情</title>
+	<link rel="stylesheet" href="./css/orderinfo.css"></link>
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div id="toTop" class="toTop" title="回到顶部"></div>
+    <div id="loading">
+      <div id="loading-animation">
+        <img src="./png/timg.gif">
+      </div>
+    </div>
+    <div id="header">
+      <div class="header-font">
+        <div class="welcome">
+          <ul class="hanggaocuowu">
+            <li>你好，欢迎光临接斧子</li>
+            <li><a id="zhanghao" href="login.html">请登录</a></li>
+            <li><a id="yidenglu" href="register.html">免费注册</a></li>
+          </ul>
+        </div>
+        <div class="myself">
+          <ul class="hanggaocuowu">
+            <li><a href="#">个人中心</a></li>
+            <li><a href="./myorder.html">我的订单</a></li>
+            <li><a href="./like.html">收藏夹</a></li>
+            <li><a href="#">充值</a></li>
+            <li><a href="#">手机版</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="serach">
+      <div class="serach-log">
+        <img src=".\png\header-logo.png" alt="进乐宝"></img>
+      </div>
+      <div class="serach-input">
+        <input type="text" placeholder="请输入商品名称">
+        <button>搜索</button>
+      </div>
+      <a href="./shopcar.html">
+        <div class="serach-car">
+          <div class="serach-car-log">
+            <img src=".\png\shopping-trolley.png" alt="我的购物车"></img>
+            <div class="mycar">我的购物车</div>
+          <div class="nub">0</div>
+          </div>
+        </div>
+      </a>
+      <div class="serach-bottom">
+        <span>西瓜</span>
+        <span>葡萄</span>
+        <span>苹果</span>
+        <span>西红柿</span>
+      </div>
+    </div>
+    <div id="daohang">
+      <ul>
+        <li id="all"><a href="./index.html">全部商品</a></li>
+        <a href="./index.html"><li>首页</li></a>
+        <a href="./today.html"><li>今日特价</li></a>
+        <a href="#"><li>精品推荐</li></a>
+        <a href="#"><li>新品上市</li></a>
+        <a href="#"><li>销售排行</li></a>
+      </ul>
+    </div>
+    <div id="breadcrumbs">订单详情</div>
+    <div id="info-title">订单号：<span class="order_no">123</span></div>
+    <!-- 五元 -->
+    <div class="order-show-status">
+        <div class="order-status">
+            <div class="order-round rount-on">1</div>
+            <span class="text-on">提交订单</span>
+        </div>
+        <div class="order-status">
+            <div class="order-round rount-on">2</div>
+            <span class="text-on">付款成功</span>
+        </div>
+        <div class="order-status">
+            <div class="order-round">3</div>
+            <span>商品发货</span>
+        </div>
+        <div class="order-status">
+            <div class="order-round">4</div>
+            <span>等待收货</span>
+        </div>
+        <div class="order-status" style="margin-right: inherit;">
+            <div class="order-round">5</div>
+            <span>完成</span>
+        </div>
+        <div class="line"><span style="width: 25%;"></span></div>
+    </div>
+    <!-- 五元结束 -->
+    <div id="orderstyle">
+      <div class="title">订单状态</div>
+      <div class="content">
+        <div class="first">订单编号：<span class="order_no"></span>&#12288;&#12288;&#12288;订单状态：<span class="paystyle">已支付</span></div>
+        <div class="two">&nbsp;</div>
+      </div>
+    </div>
+    <div id="orderfollow">
+      <div class="title">订单追踪</div>
+      <div class="content" style="height: auto;border-bottom: 0;">
+        <ul>
+          <li>处理时间</li>
+          <li>处理信息</li>
+        </ul>
+        <!-- <ul>
+          <li class="killorder_time">123</li>
+          <li class="killorder_info">hr</li>
+        </ul> -->
+       <!--  <div class="first">&#12288;处理时间：<span class="killorder_time">123</span>&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&nbsp;&nbsp;&nbsp;处理信息：<span class="killorder_info">呵呵</span></div>
+        <div class="two">&nbsp;</div> -->
+      </div>
+    </div>
+    <div id="orderinfo">
+      <div class="title">订单信息</div>
+      <div class="content">
+        <div class="info_title">收货人信息</div>
+        <ul>
+          <li class="accept_name"><span>收货人：</span></li>
+          <li class="area_name"><span>所在地区：</span></li>
+          <li class="address"><span>详细地址：</span></li>
+          <li class="mobile"><span>手机：</span></li>
+        </ul>
+        <div class="info_title">支付及配送方式</div>
+        <ul>
+          <li><span>支付方式：</span>余额支付</li>
+          <li><span>支付优惠：</span>立减<span class="Discount" style="color: red;text-align: left;">123</span></li>
+          <li class="order_amount"><span>商品总金额：</span></li>
+          <li><span>红包减免：</span>￥0.00</li>
+          <li><span>优惠总金额：</span>￥0.00</li>
+          <li class="real_amount"><span>实付金额：</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="goods_title">商品清单</div>
+    <div id="goods">
+      <table class="table">
+        <tr>
+          <td style="width: 140px;font-size: 16px;">商品编号</td>
+          <td style="width: 110px;font-size: 16px;">商品图片</td>
+          <td style="width: 470px;font-size: 16px;">商品名称</td>
+          <td style="width: 140px;font-size: 16px;">价格</td>
+          <td style="width: 140px;font-size: 16px;">数量</td>
+          <td style="width: 140px;font-size: 16px;">操作</td>
+        </tr>
+        <!-- <tr class="goodsinfo" style="border-bottom: 1px solid #ddd;">
+          <td class="goods_id">吴昊</td>
+          <td class="thumbnail"><img src="#"></td>
+          <td class="goods_name"></td>
+          <td class="goods_price"></td>
+          <td class="goods_nums"></td>
+          <td>&#12288;</td>
+        </tr> -->
+      </table>
+    </div>
+
+
+    <div id="footer_img"><img src="./png/bottom.png" width="100%"></div>
+    <div id="Copyright">
+    关于我们  | 联系我们  | 商家入驻  | 营销中心  | 友情链接<br/>
+    Copyright © 2004-2015 进乐宝 版权所有
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./js/orderinfo.js"></script>
+  
+  </body>
+</html>

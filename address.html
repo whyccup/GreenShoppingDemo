@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>收货地址</title>
+    <link rel="stylesheet" href="./css/address.css"></link>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<!-- 添加地址 -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-keyboard="false" data-backdrop="static">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content" style="width: 600px;">
+		    <div class="modal-header" style="color: #000;">
+		        <div class="close" data-dismiss="modal" aria-label="Close" style="background: url(./png/box-close.png);width: 50px;height: 50px;position: relative;left: 42px;top: -34px;"><!-- <span aria-hidden="true" ></span> --></div>
+		        <h4 class="modal-title" id="myModalLabel">添加收货地址</h4>
+		    </div>
+		    <div class="modal-body" style="color: #000;font-size: 14px;">
+		        <form class="form-horizontal">
+				  <div class="form-group">
+				    <label for="username" class="col-xs-3 control-label">收货人姓名</label>
+				    <div class="col-xs-4">
+				      <input type="text" class="form-control" id="username">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="col-xs-3 control-label">&#12288;所在地区</label>
+				    <div class="form-inline select">
+				    	<select id="userprovince" class="form-control" style="margin-left: 15px;">
+				    		<option value="-1">请选择</option>
+				    	</select>
+				    	<select id="usercity" class="form-control">
+				    		<option value="-1">请选择</option>
+				    	</select>
+				    	<select id="userarea" class="form-control" style="width: 131px;">
+				    		<option value="-1">请选择</option>
+				    	</select>
+				    	<select id="userhome" class="form-control" style="width: 145px;">
+				    		<option value="-1">请选择</option>
+				    	</select>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="userplace" class="col-xs-3 control-label">&#12288;详细地址</label>
+				    <div class="col-xs-7">
+				    	<textarea class="form-control" rows="4" id="userplace"></textarea>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="usertel" class="col-xs-3 control-label">&#12288;手机号码</label>
+				    <div class="col-xs-4">
+				      <input type="numb" class="form-control" id="usertel">
+				    </div>
+				  </div>
+				</form>
+			 </div>
+			<div class="modal-footer">
+				<span class="glyphicon glyphicon-ok" style="color: red;margin-right: 10px;font-size: 16px;font-weight: bold;" :hide>保存成功</span>
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="button" class="btn btn-success" id="save">保存地址</button>
+			</div>
+	    </div>
+	  </div>
+	</div>
+
+	
+
+	<div id="toTop" class="toTop" title="回到顶部"></div>
+    <div id="loading">
+      <div id="loading-animation">
+        <img src="./png/timg.gif">
+      </div>
+    </div>
+    <div id="header">
+      <div class="header-font">
+        <div class="welcome">
+          <ul class="hanggaocuowu">
+            <li>你好，欢迎光临接斧子</li>
+            <li><a id="zhanghao" href="login.html">请登录</a></li>
+            <li><a id="yidenglu" href="register.html">免费注册</a></li>
+          </ul>
+        </div>
+        <div class="myself">
+          <ul class="hanggaocuowu">
+            <li><a href="#">个人中心</a></li>
+            <li><a href="./myorder.html">我的订单</a></li>
+            <li><a href="./like.html">收藏夹</a></li>
+            <li><a href="#">充值</a></li>
+            <li><a href="#">手机版</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="serach">
+      <div class="serach-log">
+        <img src=".\png\header-logo.png" alt="进乐宝"></img>
+      </div>
+      <div class="serach-input">
+        <input type="text" placeholder="请输入商品名称">
+        <button>搜索</button>
+      </div>
+      <a href="./shopcar.html">
+	      <div class="serach-car">
+	        <div class="serach-car-log">
+	          <img src=".\png\shopping-trolley.png" alt="我的购物车"></img>
+	          <div class="mycar">我的购物车</div>
+	        <div class="nub">0</div>
+	        </div>
+	      </div>
+      </a>
+      <div class="serach-bottom">
+        <span>西瓜</span>
+        <span>葡萄</span>
+        <span>苹果</span>
+        <span>西红柿</span>
+      </div>
+    </div>
+    <div id="daohang">
+      <ul>
+        <li id="all"><a href="./index.html">全部商品</a></li>
+        <a href="./index.html"><li>首页</li></a>
+        <a href="./today.html"><li>今日特价</li></a>
+        <a href="#"><li>精品推荐</li></a>
+        <a href="#"><li>新品上市</li></a>
+        <a href="#"><li>销售排行</li></a>
+      </ul>
+    </div>
+    <div id="breadcrumbs">结算</div>
+    <!-- 三圆嘿嘿嘿 -->
+    <div class="trolley-show-status">
+        <div class="trolley-status">
+            <div class="trolley-round rount-on">1</div>
+            <span class="text-on">我的购物车</span>
+        </div>
+        <div class="trolley-status">
+            <div class="trolley-round rount-on">2</div>
+            <span class="text-on">填写核对订单信息</span>
+        </div>
+        <div class="trolley-status" style="margin-right: inherit;">
+            <div class="trolley-round">3</div>
+            <span>成功提交订单</span>
+        </div>
+        <div class="line"><span style="width: 50%;"></span></div>
+    </div>
+	<!-- 填写并核对订单信息 -->
+	<div id="content">
+		<div class="address-title">填写并核对订单信息</div>
+		<div id="consignee">
+			<div class="content-title">
+				<span>收货人信息</span>
+				<button type="button" id="addaddress_btn" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">添加收货地址</button>
+			</div>
+			<div id="address-content">
+				<table class="table table-hover content-table" id="address_table">
+					<tr>
+						<td class="radio-td">
+						</td>
+						<td>
+							<span>姓名</span>
+						</td>
+						<td>
+							<span>地址</span>
+						</td>
+						<td>
+							<span>联系电话</span>
+						</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<!-- <tr class="active">
+						<td class="radio-td">
+							<input type="radio" checked="checked" class="radio">
+						</td>
+						<td>
+							<span>张大名</span>
+						</td>
+						<td>
+							<span>山西大学皮条宿舍12138</span>
+						</td>
+						<td>
+							<span>1814911222</span>
+						</td>
+						<td>
+							<span>设为默认地址</span>
+						</td>
+						<td>
+							<span>编辑</span>
+						</td>
+						<td>
+							<span>删除</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="radio-td">
+							<input type="radio" class="radio">
+						</td>
+						<td>
+							<span>王鹏</span>
+						</td>
+						<td>
+							<span>山西大同市粗布码头12138</span>
+						</td>
+						<td>
+							<span>18149333333</span>
+						</td>
+						<td>
+							<button class="btn btn-success .btn-xs">保存</button>
+						</td>
+						<td></td>
+						<td></td>
+					</tr> -->
+				</table>
+			</div>
+		</div>
+		<div id="howpay">
+			<div class="content-title">
+				<span>支付方式</span>
+			</div> 
+			<div class="howpay-content">
+				<button class="btn btn-default btn-lg">货到付款</button>
+				<button class="btn btn-success btn-lg">在线支付</button>
+			</div>
+		</div>
+		<div id="caringoods">
+			<div class="content-title">
+				<span>送货清单</span>
+				<button type="button" class="btn btn-success btn-lg backshopcar">返回购物车</button>
+			</div> 
+			<div class="caringoods-table">
+				<table class="table table-hover shopcar-goods">
+					<tr>
+						<td>商品</td>
+						<td> &nbsp;</td>
+						<td style="text-align: center;">价格</td>
+						<td style="text-align: center;">数量</td>
+					</tr>
+					<tr>
+						<td class="img-td"><img src="#"></td>
+						<td><span>广西大芒果</span></td>
+						<td style="text-align: center;font-size: 18px;color: red;">￥<span class="red">123</span><span class="hidered" style="display:none">存总值</span></td>
+						<td style="text-align: center;font-size: 18px;">x<span class="count">2</span></td>
+					</tr>
+				</table>	
+			</div>
+		</div>
+		<div id="giveyou">
+			<div class="content-title">
+				<span>配送</span>
+			</div>
+			<div class="giveyou-content">
+				<div class="giveyou-btn">
+					<button class="btn btn-default btn-lg">默认配送</button>
+					<button class="btn btn-success btn-lg">指定配送时间</button>
+				</div>
+				<div class="giveyou-two">
+					<span>你希望几点送达：</span>
+					<select name="sendtime">
+                        <option>12:00-13:00</option>
+                        <option>13:00-14:00</option>
+                        <option>14:00-15:00</option>
+                        <option>15:00-16:00</option>
+                        <option>16:00-17:00</option>
+                        <option>17:00-18:00</option>
+                        <option>18:00-19:00</option>
+                        <option>19:00-20:00</option>
+                    </select>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;备注：</span>
+                    <input type="text" name="remark" placeholder="&nbsp;小拳拳锤你脑瓜，快点">
+				</div>
+				<div class="giveyou-three">
+					运费：<span class="red">免费</span>&nbsp;&nbsp;&nbsp;&nbsp;填写您希望配送的时间段（限今天）
+				</div>
+			</div>
+		</div>
+		<div id="acc">
+			<div class="content-title">
+				<span>发票</span>
+			</div>
+			<div class="acc-content">
+				如需发票请到附近门店索取。<button type="button" class="btn btn-success btn-xs">门店信息</button>
+			</div>
+		</div>
+	</div>
+	<!-- 总金额 -->
+    <div class="trolley-bottom">
+        <span class="trolley-bottom-account"></span>
+        <span>总金额：</span>
+        <span id="allcounts"><a class="howmanygoods"></a>件商品&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </div>
+    <!-- 已优惠 -->
+    <div class="trolley-bottom-accounts">
+        <span id="discount" class="numb">-￥0.0</span>
+        <span>已优惠：</span>
+    </div>
+    <!-- 运费 -->
+    <div class="trolley-bottom-accounts">
+        <span class="numb">￥0.0</span>
+        <span>运费：</span>
+    </div>
+    <!-- 应付总额 -->
+    <div class="trolley-bottom-accounts">
+        <span class="numb allmoney"></span>
+        <span>应付总额：</span>
+    </div>
+    <!-- 结算 -->
+    <div class="trolley-acc" id="boxs">
+        <button type="button" class="settlement">立即支付</button>
+        <span id="counts" class="allmoney"></span>
+        <div class="title">应付总额：</div>
+    </div>
+    <div class="abchidden"">
+      <div class="trolley-acc">
+        <button type="button" class="settlement">立即支付</button>
+        <span class="allmoney"></span>
+        <div class="title">应付总额：</div>
+      </div>
+    </div>
+
+	<div id="footer_img"><img src="./png/bottom.png" width="100%"></div>
+    <div id="Copyright">
+    关于我们  | 联系我们  | 商家入驻  | 营销中心  | 友情链接<br/>
+    Copyright © 2004-2015 进乐宝 版权所有
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./js/address.js"></script>
+</body>
+</html>

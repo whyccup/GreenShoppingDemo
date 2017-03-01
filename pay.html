@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>支付</title>
+	<link rel="stylesheet" href="./css/pay.css"></link>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div id="toTop" class="toTop" title="回到顶部"></div>
+    <div id="loading">
+      <div id="loading-animation">
+        <img src="./png/timg.gif">
+      </div>
+    </div>
+    <div id="header">
+      <div class="header-font">
+        <div class="welcome">
+          <ul class="hanggaocuowu">
+            <li>你好，欢迎光临接斧子</li>
+            <li><a id="zhanghao" href="login.html">请登录</a></li>
+            <li><a id="yidenglu" href="register.html">免费注册</a></li>
+          </ul>
+        </div>
+        <div class="myself">
+          <ul class="hanggaocuowu">
+            <li><a href="#">个人中心</a></li>
+            <li><a href="./myorder.html">我的订单</a></li>
+            <li><a href="./like.html">收藏夹</a></li>
+            <li><a href="#">充值</a></li>
+            <li><a href="#">手机版</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="serach">
+      <div class="serach-log">
+        <img src=".\png\header-logo.png" alt="进乐宝"></img>
+      </div>
+      <div class="serach-input">
+        <input type="text" placeholder="请输入商品名称">
+        <button>搜索</button>
+      </div>
+      <a href="./shopcar.html">
+        <div class="serach-car">
+          <div class="serach-car-log">
+            <img src=".\png\shopping-trolley.png" alt="我的购物车"></img>
+            <div class="mycar">我的购物车</div>
+          <div class="nub">0</div>
+          </div>
+        </div>
+      </a>
+      <div class="serach-bottom">
+        <span>西瓜</span>
+        <span>葡萄</span>
+        <span>苹果</span>
+        <span>西红柿</span>
+      </div>
+    </div>
+    <div id="daohang">
+      <ul>
+        <li id="all"><a href="./index.html">全部商品</a></li>
+        <a href="./index.html"><li>首页</li></a>
+        <a href="./today.html"><li>今日特价</li></a>
+        <a href="#"><li>精品推荐</li></a>
+        <a href="#"><li>新品上市</li></a>
+        <a href="#"><li>销售排行</li></a>
+      </ul>
+    </div>
+    <div id="breadcrumbs">支付</div>
+	<div id="time">
+		请您在提交订单后<span id="twohour">2小时00分00秒</span>内完成支付，否则订单会自动取消。
+	</div>
+	<div id="howpay">
+		<table class="table table-hover">
+			<tr>
+				<td class="ipt-radio" style="border-top:0px;"><input type="radio" name="howpay"></td>
+				<td  style="border-top:0px;width: 220px;"><img src="./png/alipay.png"></td>
+				<td  style="border-top:0px;"><span>暂无活动哦</span></td>
+			</tr>
+			<tr>
+				<td class="ipt-radio"><input type="radio" name="howpay"></td>
+				<td style="width: 220px;"><img src="./png/weixin.png"></td>
+				<td><span>暂无活动哦</span></td>
+			</tr>
+			<tr>
+				<td class="ipt-radio"><input type="radio" name="howpay"></td>
+				<td style="width: 220px;"><img src="./png/yinlian.jpg"></td>
+				<td><span>暂无活动哦</span></td>
+			</tr>
+			<tr>
+				<td class="ipt-radio"><input type="radio" name="howpay"></td>
+				<td style="width: 220px;"><img src="./png/yu-e.jpg"></td>
+				<td><span>支付优惠2%</span><span style="color: #000;float: right;">余额：￥<span class="balance">0.0</span>元</span></td>
+			</tr>
+		</table>
+	</div>
+	<div class="trolley-acc" id="boxs">
+        <button type="button" class="settlement">立即支付</button>
+        <span id="counts" class="allmoney">￥10.0</span>
+        <div class="title">应付总额：</div>
+    </div>
+
+
+
+    <div id="footer_img"><img src="./png/bottom.png" width="100%"></div>
+    <div id="Copyright">
+    关于我们  | 联系我们  | 商家入驻  | 营销中心  | 友情链接<br/>
+    Copyright © 2004-2015 进乐宝 版权所有
+    </div>
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./js/pay.js"></script>
+	
+</body>
+</html>

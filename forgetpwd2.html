@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>忘记密码</title>
+	<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./css/forgetpwd_ui2.css">
+</head>
+<body>
+	<div class="header">
+		<div id="header_img"><img src="./png/header-logo.png" alt></div>
+		<span>忘记密码</span>
+	</div>
+	<div class="yuan">
+        <div class="yuan_body yuan_1">
+            <div class="yuan_green">1</div>
+            <span>验证身份</span>
+        </div>
+        <div class="yuan_line1"></div>
+        <div class="yuan_body yuan_2">
+            <div class="yuan_green">2</div>
+            <span>重设密码</span>
+        </div>
+        <div class="yuan_line2 yuan_line_black"></div>
+        <div class="yuan_body yuan_3">
+            <div class="yuan_green yuan_black">3</div>
+            <span class="yuan_text_black">完成</span>
+        </div>
+    </div>
+	<div class="content">
+        <div><label>新密码：</label><input type="password" id="password" onblur="guifan(this)" onfocus="qingchu(this)"><span></span></div>
+        <div><label>再输一次新密码：</label><input type="password" id="pwd" onblur="guifan(this)" onfocus="qingchu(this)"><span></span></div>
+        <div><button id="next" class="btn btn-success btn-lg" onclick="javascrtpt:window.location.href='./forgetpwd3.html'">下一步</button></div>   
+    </div>
+	<div id="footer_img"><img src="./png/bottom.png" width="100%"></div>
+	<div id="Copyright">
+		关于我们	|	联系我们	|	商家入驻	|	营销中心	|	友情链接<br/>
+		Copyright	©	2004-2015	进乐宝	版权所有
+    </div>
+</body>
+<script type="text/javascript">
+    function guifan(_abc){
+        var abc = _abc;
+        if (abc.id == 'password') {
+            if (!/^\w{6,12}$/.test(abc.value)) {
+                abc.nextElementSibling.innerText = '你的密码不符合规范或过短、过长';
+                abc.style.border = '1px solid #e22';
+                return;
+                }
+        }
+        if (abc.id == 'pwd') {
+            if (!/^\w{6,12}$/.test(abc.value)) {
+                abc.nextElementSibling.innerText = '确认密码不符合规范';
+                abc.style.border = '1px solid #e22';
+                return;
+            }
+        }
+    }
+    function qingchu(_abc){                           
+        var abc = _abc;              
+        abc.style.border = '1px solid #dedede';                 
+        abc.nextElementSibling.innerText = '';                 
+    }
+
+    </script>
+</html>

@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href=".\css\index.css"></link>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap-glyphicons/1.0/css/bootstrap-glyphicons.css">
+    <title>进乐宝</title>
+  </head>
+  <body>
+  
+    <div id="toTop" class="toTop" title="回到顶部"></div>
+    <div id="header">
+      <div class="header-font">
+        <div class="welcome">
+          <ul class="hanggaocuowu">
+            <li>你好，欢迎光临接斧子</li>
+            <li><a id="zhanghao" href="login.html">请登录</a></li>
+            <li><a id="yidenglu" href="register.html">免费注册</a></li>
+          </ul>
+        </div>
+        <div class="myself">
+          <ul class="hanggaocuowu">
+            <li><a href="#">个人中心</a></li>
+            <li><a href="./myorder.html">我的订单</a></li>
+            <li><a href="./like.html">收藏夹</a></li>
+            <li><a href="#">充值</a></li>
+            <li><a href="#">手机版</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="serach">
+      <div class="serach-log">
+        <img src=".\png\header-logo.png" alt="进乐宝"></img>
+      </div>
+      <div class="serach-input">
+        <input type="text" placeholder="请输入商品名称">
+        <button>搜索</button>
+      </div>
+      <a href="./shopcar.html">
+        <div class="serach-car">
+          <div class="serach-car-log">
+            <img src=".\png\shopping-trolley.png" alt="我的购物车"></img>
+            <div class="mycar">我的购物车</div>
+          <div class="nub">0</div>
+          </div>
+        </div>
+      </a>
+      <div class="serach-bottom">
+        <span>西瓜</span>
+        <span>葡萄</span>
+        <span>苹果</span>
+        <span>西红柿</span>
+      </div>
+    </div>
+    <div id="daohang">
+      <ul>
+        <li id="all"><a href="#">全部商品</a></li>
+        <a href="./index.html"><li>首页</li></a>
+        <a href="./today.html"><li>今日特价</li></a>
+        <li><a href="#">精品推荐</a></li>
+        <li><a href="#">新品上市</a></li>
+        <li><a href="#">销售排行</a></li>
+      </ul>
+    </div>
+    <div id="shop">
+      <ul class="fenlei">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div id="twoSelect">
+        <div id="drink"></div>
+      </div>
+      <p>这是商品</p>
+      <div class="zixun">
+        <ul id="ularticles">
+          <li class="yaoezi">站类咨询<a href="#">更多</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="today">
+        <div class="bg top-left jqajax">
+          <div class="hide tleft">
+            <div class="hide-pay">价格123</div>
+            <div class="hide-btn">立刻购买</div>
+          </div>
+        </div>
+        <!-- 今日特价图片所在 -->
+        <div class="bg top-center"></div>
+        <div class="bg top-right jqajax">
+          <div class="hide tright">
+            <div class="hide-pay">价格123</div>
+            <div class="hide-btn">立刻购买</div>
+          </div>
+        </div>
+        <div class="bg bottom-left jqajax">
+          <div class="hide bleft">
+            <div class="hide-pay">价格123</div>
+            <div class="hide-btn">立刻购买</div>
+          </div>
+        </div>
+        <div class="bg bottom-center jqajax">
+          <div class="hide bctr">
+            <div class="hide-pay">价格123</div>
+            <div class="hide-btn">立刻购买</div>
+          </div>
+        </div>
+        <div class="bg bottom-right jqajax">
+          <div class="hide bright">
+            <div class="hide-pay">价格123</div>
+            <div class="hide-btn">立刻购买</div>
+          </div>
+        </div>
+    </div>
+    <div id="footer_img"><img src="./png/bottom.png" width="100%"></div>
+    <div id="Copyright">
+    关于我们  | 联系我们  | 商家入驻  | 营销中心  | 友情链接<br/>
+    Copyright © 2004-2015 进乐宝 版权所有
+    </div>
+
+
+    
+  <script type="text/javascript">
+    //实现今日特价旁图片的渐变动画效果
+    $("#today").find(".jqajax").hover(function() {
+      $(this).find(".hide").toggle(100);
+    });   
+    //实现点击今日特价
+    //实现点击图片跳转
+    $(".top-center").click(function(event) {
+     $(event).widow(location.href = './today.html');
+    });
+    
+   //如果localStorage不等于空，则修改#zhanghao和#yidenglu的value和harf。否则什么也不做。
+    if (localStorage != '') {
+      $("#zhanghao").text(localStorage.phone);
+      $("zhanghao").attr("href", "#");
+      $("yidenglu").text('已登录');
+      $("yidenglu").attr("href","./login.html");
+    }
+   
+   
+    $(document).ready(function($){
+      
+
+      //jQuery-ajax实现今日特价内容填充
+      var jqxhr = $.ajax({
+        url: 'http://192.168.1.8:8006/v1/assist/cheap',
+        type: 'GET',
+        dataType: 'json',
+        data: {token: 'c7cea9e6447cab4a006bda6d0ff49527'},
+      })
+      .done(function(gg){
+        console.log("success");
+        console.log(gg)
+        if (gg.status == 200) {
+          var _goods = gg.data;
+          $(".jqajax").each(function(index, el){
+            $(el).append('<img src="http://192.168.1.8:8008/' + _goods.goods_list[index].thumbnail + '">');
+          });
+          $("#today").find('.hide-pay').each(function(index, el) {
+            $(el).html('￥'+_goods.goods_list[index].sale_price);
+          });
+        }
+      });
+      
+
+
+
+
+
+      var xhr = new XMLHttpRequest();
+      //指定一个通信状态改变时的回掉函数(通信状态改变后才会触发)
+      xhr.onreadystatechange = function(){
+      //判断通信成功，状态为4的时候
+        if (xhr.readyState === 4) {
+        //此时已经拿到返回的内容，我们打出来
+          if (xhr.response.status == 200) {
+            var _data = xhr.response.data;
+            for (var i = 0; i < _data.articles.length; i++) {
+              $("#ularticles").append('<li><a><span>' + _data.articles[i].title + '<span></a></li>');
+            }
+          }
+        }
+      }
+      //打开请求(请求方式，请求接口，异步(true)还是同步(false))
+      xhr.open('get','http://192.168.1.8:8006/v1/article/hot?limit=10&offset=0',true);
+      //设置请求响应类型
+      xhr.responseType = 'json';
+      //设置http请求头
+      //纯文本请求头
+      xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+      //文本加请求头
+      //xhr.setRequestHeader('Content-Type','application/json');
+      xhr.send(null);
+
+
+      //jQuery,实现2级菜单
+      //二级菜单中内容动态调用
+      var xhr2 = new XMLHttpRequest();
+      xhr2.onreadystatechange = function(){
+        if (xhr2.readyState === 4) {
+          console.log(xhr2);
+          if (xhr2.response.status == 200) {
+            var _data2 = xhr2.response.data;
+            $(".fenlei").find('li').each(function(index, el) {
+              $(el).html('<a data-id="'+_data2.category[index].category_id+'"><span class="glyphicon glyphicon-thumbs-up"></span><span>' + _data2.category[index].category_name +'</span></a>')
+            });
+          }
+        }
+      }
+      xhr2.open('get','http://192.168.1.8:8006/v1/assist/category?parent=0',true);
+      xhr2.responseType = 'json';
+      xhr2.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+      xhr2.send(null);    
+
+
+
+
+
+      }); 
+
+
+      $(".fenlei li").hover(
+        function(){
+          $("#drink").html('');
+          $("#drink").css("display","block");
+          two($(this).find("a").attr("data-id"));
+        },
+        function(){
+          $("#drink").css("display","none");
+          //$("#drink").html('');
+        }
+      );
+      $("#drink").hover(function() {
+        $("#drink").show();
+      }, function() {
+        $("#drink").hide();
+      });
+      
+
+
+      function two(category_id){
+          var xhr3 = new XMLHttpRequest();
+          xhr3.onreadystatechange = function(){
+            if (xhr3.readyState === 4) {
+              console.log(xhr3);
+              if(xhr3.response.status == 200){
+                var _xhr3 = xhr3.response.data.category;
+                for (var i = 0; i < _xhr3.length; i++) {
+                  $("#drink").append('<span style="font-size:16px;border-left:1px solid #000;">'+ _xhr3[i].category_name + ';<span>');
+                  }
+                }
+              }
+            }
+          xhr3.open('get','http://192.168.1.8:8006/v1/assist/category?parent=' + category_id,true);
+          xhr3.responseType = 'json';
+          xhr3.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+          xhr3.send(null); 
+      }
+
+    //返回顶部
+    $("#toTop").click(function(event) {
+      $('body,html').animate({scrollTop:0},1000); 
+      return false; 
+    });
+    </script>
+  </body>
+</html>
